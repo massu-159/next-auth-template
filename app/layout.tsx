@@ -3,7 +3,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navigation from './components/navigation/Navigation'
 import AuthContext from './context/AuthContext'
+import SignupModal from '@/app/components/modal/SignupModal'
 import getCurrentUser from './actions/getCurrentUser'
+import ToasterContext from './context/ToasterContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,8 +24,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div>
+        {/* Toaster */}
+        <ToasterContext></ToasterContext>
+        {/* SignupModal */}
+        <SignupModal></SignupModal>
+
+        <AuthContext>
           <div className="flex min-h-screen flex-col">
+            {/* Navigation */}
             <Navigation currentUser={currentUser}></Navigation>
             <main className="container mx-auto max-w-screen-sm flex-1 px-1 py-5">{children}</main>
             <footer className='py-5'>
@@ -32,7 +40,7 @@ export default async function RootLayout({
               </div>
             </footer>
           </div>
-        </div>
+        </AuthContext>
       </body>
     </html>
   )
