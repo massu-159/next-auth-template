@@ -5,6 +5,7 @@ import Navigation from './components/navigation/Navigation'
 import AuthContext from './context/AuthContext'
 import SignupModal from '@/app/components/modals/SignupModal'
 import LoginModal from '@/app/components/modals/LoginModal'
+import ProfileModal from '@/app/components/modals/ProfileModal'
 import getCurrentUser from './actions/getCurrentUser'
 import ToasterContext from './context/ToasterContext'
 
@@ -30,6 +31,7 @@ export default async function RootLayout({
         {/* Modal */}
         <SignupModal></SignupModal>
         <LoginModal></LoginModal>
+        <ProfileModal currentUser={currentUser}></ProfileModal>
 
         <AuthContext>
           <div className="flex min-h-screen flex-col">
