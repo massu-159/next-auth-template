@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import Navigation from './components/navigation/Navigation'
 import AuthContext from './context/AuthContext'
 import SignupModal from '@/app/components/modals/SignupModal'
+import LoginModal from '@/app/components/modals/LoginModal'
 import getCurrentUser from './actions/getCurrentUser'
 import ToasterContext from './context/ToasterContext'
 
@@ -26,8 +27,9 @@ export default async function RootLayout({
       <body className={inter.className}>
         {/* Toaster */}
         <ToasterContext></ToasterContext>
-        {/* SignupModal */}
+        {/* Modal */}
         <SignupModal></SignupModal>
+        <LoginModal></LoginModal>
 
         <AuthContext>
           <div className="flex min-h-screen flex-col">
