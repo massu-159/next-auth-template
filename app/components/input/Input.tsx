@@ -29,8 +29,8 @@ const Input: React.FC<InputProps> = ({
         disabled={disabled}
         {...register(id, { required })}
         placeholder=""
-        type="type"
-        className={`w-full rounded-lg border-2 p-4 outline-none transition disabled:cursor-not-allowed disabled:opacity-70 ${errors[id] ? 'border-red-500 focus:border-red-500' : 'border-sky-500 focus:border-sky-500'}`} />
+        type={type}
+        className={`w-full rounded-lg border-2 p-4 outline-none transition disabled:cursor-not-allowed disabled:opacity-70 ${errors[id] ? 'border-red-500 focus:border-red-500' : 'border-neutral-300 focus:border-sky-500'}`} />
       {errors[id] && (
         <div className="my-3 text-center text-sm text-red-500">{errors[id].message}</div>
       )}

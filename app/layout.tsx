@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navigation from './components/navigation/Navigation'
 import AuthContext from './context/AuthContext'
-import SignupModal from '@/app/components/modal/SignupModal'
+import SignupModal from '@/app/components/modals/SignupModal'
 import getCurrentUser from './actions/getCurrentUser'
 import ToasterContext from './context/ToasterContext'
 
